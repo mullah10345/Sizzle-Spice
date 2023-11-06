@@ -1,0 +1,44 @@
+<!-- menu_item.html -->
+<div>
+    <h2>{{ menu_item.name }}</h2>
+    <p>{{ menu_item.description }}</p>
+    <p>Price: ${{ menu_item.price }}</p>
+</div>
+
+<div>
+    <h3>Reviews</h3>
+    <ul>
+        {% for review in menu_item.reviews %}
+            <li>
+                <p>Rating: {{ review.rating }}/5</p>
+                <p>Comment: {{ review.comment }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div>
+    <h3>Leave a Review</h3>
+    <form method="POST" action="/menu_item/{{ menu_item.id }}/add_review">
+        <label for="rating">Rating:</label>
+        <input type="number" name="rating" min="1" max="5" required>
+        <br>
+        <label for="comment">Comment:</label>
+        <textarea name="comment"></textarea>
+        <br>
+        <button type="submit">Submit Review</button>
+    </form>
+</div>
+
+<div>
+    <h3>Leave a Review</h3>
+    <form method="POST" action="/menu_item/{{ menu_item.id }}/add_review">
+        <!-- Other form fields -->
+
+        <!-- Add the reCAPTCHA widget -->
+        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+
+        <br>
+        <button type="submit">Submit Review</button>
+    </form>
+</div>

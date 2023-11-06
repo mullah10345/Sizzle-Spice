@@ -1,0 +1,13 @@
+<h1>Admin Promotions</h1>
+<a href="/admin/promotions/new">Create New Promotion</a>
+<ul>
+    {% for promotion in promotions %}
+        <li>
+            <h2>{{ promotion.title }}</h2>
+            <p>{{ promotion.description }}</p>
+            <p>Start Date: {{ promotion.start_date }}</p>
+            <p>End Date: {{ promotion.end_date }}</p>
+            <a href="/admin/promotions/{{ promotion.id }}/edit">Edit</a>
+        </li>
+    {% endfor %}
+</ul>

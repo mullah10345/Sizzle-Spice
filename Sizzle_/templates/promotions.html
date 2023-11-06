@@ -1,0 +1,12 @@
+
+<h1>Promotions</h1>
+<ul>
+    {% for promotion in promotions %}
+        <li>
+            <h2>{{ promotion.title }}</h2>
+            <p>{{ promotion.description }}</p>
+            <p>Start Date: {{ promotion.start_date }}</p>
+            <p>End Date: {{ promotion.end_date }}</p>
+        </li>
+    {% endfor %}
+</ul>
